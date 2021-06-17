@@ -1,6 +1,10 @@
+import Nav from './Nav';
+import SearchArea from './SearchArea';
+
 const App = () => (
   <div className="App">
-    <h1>Movie Finder</h1>
+    <Nav />
+    <SearchArea />
   </div>
 );
 
