@@ -68,17 +68,17 @@ Your app is ready to be deployed!
 
 |  APP NAME | BUILD STATUS: |
 |   :---:   |    :---:     |
-|**movie-finder** |  |
+|**movie-finder** | [![Netlify Status](https://api.netlify.com/api/v1/badges/a694de1f-d54c-4a9f-bcaf-d2f8552e3bb8/deploy-status)](https://app.netlify.com/sites/my-react-movie-finder/deploys) |
 
 ---
 
-## 7. Live link
+## 4. Live link
 
-[Link to Live Page]()
+[Link to Live Page](https://my-react-movie-finder.netlify.app/)
 
 ---
 
-## 8. Author Section
+## 5. Author Section
 
 👤 **Christian Otieno**
 
@@ -88,7 +88,7 @@ Your app is ready to be deployed!
 
 ---
 
-## 9. 🤝 Contributing
+## 6. 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
@@ -96,6 +96,6 @@ Feel free to check the [issues page](https://github.com/christianotieno/movie-fi
 
 ---
 
-## 10. Show your support
+## 7. Show your support
 
 Give a ⭐️ if you like this project!
