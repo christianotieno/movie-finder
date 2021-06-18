@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 const Movie = (props) => {
   const { image } = props;
+  const baseImgUrl = 'https://image.tmdb.org/t/p';
+  const size = 'w185';
+  const defaultImg = 'kqjL17yufvn9OVLyXYpvtyrFfak.jpg';
   return (
     <div className="col s12 m6 l3">
       <div className="card">
@@ -17,13 +20,13 @@ const Movie = (props) => {
               image == null
                 ? (
                   <img
-                    src="https://images.unsplash.com/photo-1611173543358-10cb5d0f9ca3?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                    src={`${baseImgUrl}/${size}/${defaultImg}`}
                     alt=""
                     style={{ width: '100%', height: 360 }}
                   />
                 ) : (
                   <img
-                    src={`http://image.tmdb.org/t/p/w185${image}`}
+                    src={`${baseImgUrl}/${size}${image}`}
                     alt=""
                     style={{ width: '100%', height: 360 }}
                   />
@@ -39,7 +42,7 @@ const Movie = (props) => {
 };
 
 Movie.defaultProps = {
-  image: '',
+  image: 'https://image.tmdb.org/t/p/w185',
 };
 
 Movie.propTypes = {

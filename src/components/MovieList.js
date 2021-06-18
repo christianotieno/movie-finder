@@ -11,7 +11,7 @@ const MovieList = (props) => {
         <div className="col s12">
           {
         movies.map((movie) => (
-          <Movie key={movie} image={movie.poster_path} />
+          <Movie key={movie.id} image={movie.poster_path} />
         ))
 
   }

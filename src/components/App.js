@@ -1,33 +1,43 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import Nav from './Nav';
 import SearchArea from './SearchArea';
 import MovieList from './MovieList';
 
-const App = () => {
-  const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const apiKey = process.env.REACT_APP_API_KEY;
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: [],
+      searchTerm: '',
+    };
+    this.apiKey = process.env.REACT_APP_API_KEY;
+  }
 
-  const handleSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`)
+    /* eslint-disable-next-line */
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`)
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
-        setMovies([...movies, { movies: data.results }]);
+        // eslint-disable-next-line
+        console.log(data.results);
+        this.setState({ movies: [...data.results] });
       });
   };
 
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+  handleChange = (e) => {
+    this.setState({ searchTerm: e.target.value });
   };
 
-  return (
-    <div className="App">
-      <Nav />
-      <SearchArea handleSubmit={handleSubmit} handleChange={handleChange} />
-      <MovieList movies={movies} />
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className="App">
+        <Nav />
+        <SearchArea handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+        {/* eslint-disable-next-line */}
+        <MovieList movies={this.state.movies} />
+      </div>
+    );
+  }
+}
 export default App;
