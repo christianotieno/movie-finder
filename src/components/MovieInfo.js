@@ -13,7 +13,10 @@ const MovieInfo = (props) => (
         }
 }
     >
-      <span style={{ marginLeft: 10 }}>Go back</span>
+      <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+        <i className="material-icons">arrow_back</i>
+        <span style={{ marginLeft: 10 }}>Go back</span>
+      </div>
     </div>
     <div className="row">
       <div className="col s12 m4">
@@ -48,7 +51,9 @@ const MovieInfo = (props) => (
             <b>{props.currentMovie.title}</b>
           </p>
           <p>
-            {props.currentMovie.release_date.substring(5).split('-').concat(props.currentMovie.release_date.substring(0, 4)).join('/')}
+            {
+            props.currentMovie.release_date.substring(5).split('-').concat(props.currentMovie.release_date.substring(0, 4)).join('/')
+}
           </p>
           <p>{props.currentMovie.overview}</p>
         </div>
