@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Movie from './Movie';
@@ -11,7 +12,12 @@ const MovieList = (props) => {
         <div className="col s12">
           {
         movies.map((movie) => (
-          <Movie key={movie.id} image={movie.poster_path} />
+          <Movie
+            key={movie.id}
+            viewMovieInfo={props.viewMovieInfo}
+            movieId={movie.id}
+            image={movie.poster_path}
+          />
         ))
 
   }

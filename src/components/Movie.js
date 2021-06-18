@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -22,19 +23,36 @@ const Movie = (props) => {
                   <img
                     src={`${baseImgUrl}/${size}/${defaultImg}`}
                     alt=""
-                    style={{ width: '100%', height: 360 }}
+                    style={
+                      {
+                        width: '100%',
+                        height: 360,
+                      }
+}
                   />
                 ) : (
                   <img
                     src={`${baseImgUrl}/${size}${image}`}
                     alt=""
-                    style={{ width: '100%', height: 360 }}
+                    style={
+                      {
+                        width: '100%',
+                        height: 360,
+                      }
+}
                   />
                 )
             }
         </div>
         <div className="card-content">
-          <p><a href="www.google.com"> View details</a></p>
+          <p>
+            <a
+              href="#"
+              onClick={() => props.viewMovieInfo(props.movieId)}
+            >
+              View Details
+            </a>
+          </p>
         </div>
       </div>
     </div>
