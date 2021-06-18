@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Nav = () => (
-  <nav>
+  <nav className="deep-orange">
     <div className="nav-wrapper container">
-      <a href="www.google.com" className="brand-logo">Movie Finder</a>
+      <a href="www.google.com" className="brand-logo">Movie finder</a>
     </div>
   </nav>
 );
